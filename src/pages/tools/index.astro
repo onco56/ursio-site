@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+
+const entries = await getCollection("tools");
+---
+
+<ContentLayout entry={{ data: { title: "Tools" } }}>
+  <fragment slot="head">
+    <title>URSIO – Tools</title>
+    <meta
+      name="description"
+      content="Übersicht über die Tools auf URSIO – kleine hilfreiche Module, klar strukturiert und ruhig präsentiert."
+    />
+    <link rel="canonical" href="https://ursio.ch/tools/" />
+    <meta property="og:title" content="URSIO – Tools" />
+    <meta
+      property="og:description"
+      content="Die Tools-Sammlung von URSIO – kompakte, ruhige und strukturierte Werkzeuge."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ursio.ch/tools/" />
+  </fragment>
+
+  <section class="tools-overview">
+
+    <header>
+      <h1>Tools</h1>
+    </header>
+
+    <ul>
+      {entries.map((entry) => (
+        <li>
+          <a href={`/tools/${entry.slug}/`}>{entry.data.title}</a>
+        </li>
+      ))}
+    </ul>
+
+  </section>
+</ContentLayout>
+

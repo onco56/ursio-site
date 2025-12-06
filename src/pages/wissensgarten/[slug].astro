@@ -1,0 +1,50 @@
+---
+import { getCollection, getEntryBySlug } from "astro:content";
+import GardenLayout from "../../layouts/GardenLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("garten");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntryBySlug("garten", slug);
+
+if (!entry) {
+  throw new Error(`Garten-Eintrag nicht gefunden: ${slug}`);
+}
+
+const { Content } = await entry.render();
+
+// fallback description
+const description =
+  entry.data.description ??
+  `Ein Eintrag im Wissensgarten von URSIO: ${entry.data.title}.`;
+---
+
+<GardenLayout title={entry.data.title}>
+  <fragment slot="head">
+    <title>URSIO – {entry.data.title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={`https://ursio.ch/wissensgarten/${slug}/`} />
+    <meta property="og:title" content={`URSIO – ${entry.data.title}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={`https://ursio.ch/wissensgarten/${slug}/`} />
+  </fragment>
+
+  <section class="garden-page">
+
+    <header>
+      <h1>{entry.data.title}</h1>
+    </header>
+
+    <article>
+      <Content />
+    </article>
+
+  </section>
+</GardenLayout>
+

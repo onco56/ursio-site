@@ -1,0 +1,90 @@
+/* -------------------------------------------
+   URSIO CI v1.3 – Base Styles
+   Fundament der Quiet-Zen-Earth Umgebung
+------------------------------------------- */
+
+/* Reset & Box Model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root & Body Setup */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  line-height: var(--line-height-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------------------------------------------
+   Images
+------------------------------------------- */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* -------------------------------------------
+   Forms
+------------------------------------------- */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* -------------------------------------------
+   Links – Quiet Interaction Reset
+------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* -------------------------------------------
+   Main Layout Container
+------------------------------------------- */
+main {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+/* -------------------------------------------
+   Section Spacing
+------------------------------------------- */
+section {
+  margin-bottom: var(--space-7);
+}
+
+/* -------------------------------------------
+   Utility Classes (minimal)
+------------------------------------------- */
+
+.spacer {
+  margin-top: var(--space-5);
+}
+
+.soft-shadow {
+  box-shadow: var(--shadow-soft);
+}
+
+.medium-shadow {
+  box-shadow: var(--shadow-medium);
+}
+

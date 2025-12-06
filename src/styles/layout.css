@@ -1,0 +1,83 @@
+/* -------------------------------------------
+   URSIO CI v1.3 – Layout System
+   Container, Grid, Quiet-Spacing Architecture
+------------------------------------------- */
+
+/* Hauptcontainer */
+.container {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+/* Breiter Container für Bild/Text-Sektionen */
+.container-wide {
+  width: 100%;
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+/* Zwei-Spalten-Layout (für Texte & Sparks) */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+@media (max-width: 800px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sanfter Section-Abstand nach URSIO Quiet System */
+section {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+/* Zentrierte Hero-Bereiche (Startseite & Landing Pages) */
+.hero {
+  text-align: center;
+  padding: var(--space-7) var(--space-4);
+  margin: 0 auto;
+}
+
+/* Kartenlayout (für Sparks, Artikel, Garten-Einträge) */
+.card {
+  background: var(--color-bg-soft);
+  padding: var(--space-5);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow var(--transition-quick);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+/* Listenraster für Sparks & Garten */
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Footer Layout */
+.footer {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  color: var(--color-ink-soft);
+  font-size: var(--text-sm);
+}
+
+/* Navigation Alignment (QuietHeader) */
+.nav-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-4) 0;
+}
+

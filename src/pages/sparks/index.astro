@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import SparkLayout from "../../layouts/SparkLayout.astro";
+
+const entries = await getCollection("sparks");
+---
+
+<SparkLayout title="Sparks">
+  <fragment slot="head">
+    <title>URSIO – Sparks</title>
+    <meta
+      name="description"
+      content="Sparks – kurze Impulse und Ideen auf URSIO. Kleine Funken der Inspiration, ruhig strukturiert präsentiert."
+    />
+    <link rel="canonical" href="https://ursio.ch/sparks/" />
+    <meta property="og:title" content="URSIO – Sparks" />
+    <meta
+      property="og:description"
+      content="Die Sparks von URSIO – kompakte, klare und inspirierende Gedankenfunken."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ursio.ch/sparks/" />
+  </fragment>
+
+  <section class="spark-overview">
+
+    <header>
+      <h1>Sparks</h1>
+    </header>
+
+    <article>
+      <ul>
+        {entries.map((entry) => (
+          <li>
+            <a href={`/sparks/${entry.slug}/`}>{entry.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </article>
+
+  </section>
+</SparkLayout>
+

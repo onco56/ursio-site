@@ -1,0 +1,13 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <slot slot="head" name="head" />
+
+  <section class="path-container prose-path">
+    <slot />
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import TextLayout from "../../layouts/TextLayout.astro";
+
+const entries = await getCollection("texte");
+---
+
+<TextLayout title="Texte">
+  <fragment slot="head">
+    <title>URSIO – Texte</title>
+    <meta name="description" content="Übersicht aller Texte auf URSIO – ein ruhiger Ort für strukturierte Gedanken, Wissen und Exploration." />
+    <link rel="canonical" href="https://ursio.ch/texte/" />
+    <meta property="og:title" content="URSIO – Texte" />
+    <meta property="og:description" content="Die Textsammlung von URSIO – klar, ruhig, strukturiert." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ursio.ch/texte/" />
+  </fragment>
+
+  <section class="text-overview">
+
+    <header>
+      <h1>Texte</h1>
+    </header>
+
+    <article>
+      <ul>
+        {entries.map((entry) => (
+          <li>
+            <a href={`/texte/${entry.slug}/`}>{entry.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </article>
+
+  </section>
+</TextLayout>
+

@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+
+const entries = await getCollection("lp");
+---
+
+<ContentLayout entry={{ data: { title: "Landingpages" } }}>
+  <fragment slot="head">
+    <title>URSIO – Landingpages</title>
+    <meta
+      name="description"
+      content="Übersicht aller Landingpages auf URSIO – klar strukturierte Einstiegspunkte für Themen und Module."
+    />
+    <link rel="canonical" href="https://ursio.ch/lp/" />
+    <meta property="og:title" content="URSIO – Landingpages" />
+    <meta
+      property="og:description"
+      content="Die Übersicht der Landingpages von URSIO – ruhige, klare strukturelle Einstiegspunkte."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ursio.ch/lp/" />
+  </fragment>
+
+  <section class="lp-overview">
+
+    <header>
+      <h1>Landingpages</h1>
+    </header>
+
+    <article>
+      <ul>
+        {entries.map((entry) => (
+          <li>
+            <a href={`/lp/${entry.slug}/`}>{entry.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </article>
+
+  </section>
+</ContentLayout>
+

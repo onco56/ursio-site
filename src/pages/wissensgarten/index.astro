@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import GardenLayout from "../../layouts/GardenLayout.astro";
+
+const entries = await getCollection("garten");
+---
+
+<GardenLayout title="Wissensgarten">
+  <fragment slot="head">
+    <title>URSIO – Wissensgarten</title>
+    <meta
+      name="description"
+      content="Der Wissensgarten von URSIO – ein ruhiger Ort, an dem Inhalte gepflegt, geordnet und entdeckt werden können."
+    />
+    <link rel="canonical" href="https://ursio.ch/wissensgarten/" />
+    <meta property="og:title" content="URSIO – Wissensgarten" />
+    <meta
+      property="og:description"
+      content="Ein strukturierter, ruhiger Ort voller Wissen – der Wissensgarten von URSIO."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ursio.ch/wissensgarten/" />
+  </fragment>
+
+  <section class="garden-overview">
+
+    <header>
+      <h1>Wissensgarten</h1>
+    </header>
+
+    <article>
+      <ul>
+        {entries.map((entry) => (
+          <li>
+            <a href={`/wissensgarten/${entry.slug}/`}>{entry.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </article>
+
+  </section>
+</GardenLayout>
+

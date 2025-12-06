@@ -1,0 +1,24 @@
+<section class="cta">
+  <h2>{Astro.props.title}</h2>
+  <p>{Astro.props.text}</p>
+
+  <div class="actions">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .cta {
+    margin-bottom: var(--space-5);
+    padding: var(--space-4) var(--space-3);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .actions {
+    margin-top: var(--space-3);
+    display: flex;
+    gap: var(--space-3);
+  }
+</style>
+

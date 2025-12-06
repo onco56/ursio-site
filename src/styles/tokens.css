@@ -1,0 +1,58 @@
+:root {
+  /* -------------------------------------------
+     URSIO CI v1.3 – Grundfarben (Zen–Earth)
+  ------------------------------------------- */
+  --color-bg: #F7F4EE;
+  --color-bg-soft: #F2EFE9;
+  --color-ink: #1A1A1A;
+  --color-ink-soft: #4A4A4A;
+  --color-accent: #B4875A;
+  --color-accent-soft: #D6C1A7;
+
+  /* -------------------------------------------
+     Typografie – URSIO Quiet Typography
+  ------------------------------------------- */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Literata", Georgia, serif;
+  --line-height-body: 1.55;
+  --line-height-tight: 1.25;
+  --line-height-loose: 1.75;
+
+  /* Schriftgrößen – skalierte Typo-Matrix */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+
+  /* -------------------------------------------
+     Abstände (Spacing Scale – URSIO v1.3)
+  ------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  /* -------------------------------------------
+     Layout Tokens
+  ------------------------------------------- */
+  --max-width-content: 720px;
+  --max-width-wide: 1180px;
+  --radius-soft: 6px;
+  --radius-medium: 12px;
+
+  /* -------------------------------------------
+     Quiet Interaction Tokens
+  ------------------------------------------- */
+  --transition-quick: 150ms ease;
+  --transition-slow: 300ms ease;
+
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
